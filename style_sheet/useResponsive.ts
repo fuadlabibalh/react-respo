@@ -9,9 +9,9 @@ export interface CondsCss {
 
 export interface setCondision { (device: DeviceScreens): CondsCss }
 
-function gerResp(styleDef: React.CSSProperties, ...setConds: setCondision[]) {
+function gerResp(styleDef: (device: DeviceScreens)=> React.CSSProperties, ...setConds: setCondision[]) {
   const device = useDeviceScreen()
-  let result = {...styleDef}
+  let result = {...styleDef(device)}
   for(let i: number = 0; i < setConds.length; i++){
     let func = setConds[i]
     let temp = func(device)
