@@ -12,44 +12,6 @@ const useCss = (configStyle) => {
     let result = Object.assign(Object.assign({}, (_a = configStyle === null || configStyle === void 0 ? void 0 : configStyle.current) === null || _a === void 0 ? void 0 : _a.default), { transition: "all 0.25s" });
     const { orientation, type, os } = (0, useDeviceScreen_1.default)();
     result = (0, responsive_1.concateWithOrientation)(result, configStyle === null || configStyle === void 0 ? void 0 : configStyle.current, type);
-    // switch (os) {
-    //   case OSDevice.MAC.valueOf():
-    //   case OSDevice.DARWIN.valueOf():
-    //   case OSDevice.WIN.valueOf():
-    //   case OSDevice.LINUX.valueOf():
-    //   case OSDevice.NOT_IDENTIFICATION.valueOf():
-    //     if (configStyle?.pc!) {
-    //       if (orientation === ScreenOrientation.LANDSCAPE) {
-    //         result =
-    //           configStyle?.pc?.lanscape! &&
-    //           concateWithOrientation(result, configStyle?.pc?.lanscape!, type)
-    //       }
-    //       if (orientation === ScreenOrientation.POTRET) {
-    //         result =
-    //           configStyle?.pc?.potret! &&
-    //           concateWithOrientation(result, configStyle?.pc?.potret!, type)
-    //       }
-    //       break
-    //     }
-    //   case OSDevice.ANDROID.valueOf():
-    //   case OSDevice.IOS.valueOf():
-    //     if (configStyle?.mobile!) {
-    //       if (orientation === ScreenOrientation.LANDSCAPE) {
-    //         result =
-    //           configStyle?.mobile?.lanscape! &&
-    //           concateWithOrientation(result, configStyle.mobile!.lanscape!, type)
-    //       }
-    //       if (orientation === ScreenOrientation.POTRET) {
-    //         result =
-    //           configStyle?.mobile?.potret! &&
-    //           concateWithOrientation(result, configStyle?.mobile?.potret!, type)
-    //       }
-    //       break
-    //     }
-    //   default:
-    //     result = concateWithOrientation(result, configStyle?.current!, type)
-    // }
-    // return result
     if ((configStyle === null || configStyle === void 0 ? void 0 : configStyle.pc) &&
         (os === deviceScreen_1.OSDevice.WIN ||
             os === deviceScreen_1.OSDevice.DARWIN ||
