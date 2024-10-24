@@ -47,6 +47,39 @@ react-dom@^18.1.1:
     loose-envify "^1.1.0"
     scheduler "^0.23.2"
 
+react-resp-rr@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-resp-rr/-/react-resp-rr-1.0.2.tgz#3acfc16965347d21a24cd3b7f1e7fc8f5b2a4860"
+  integrity sha512-SyuecRcmYJCnZTn+5Qa7LQ9NPL7GkTWoMjqVJOjtH7Cwo0hJCscoJjR/NcNgcuHPvUqA/MG/36FhiR1iEYg0CQ==
+
+react-resp-rr@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-resp-rr/-/react-resp-rr-1.0.3.tgz#39289a64f258106ff01beefaa7094a81c8b54b14"
+  integrity sha512-yjmE/hjiqV7B4h14XvjUmH31Q/i3Ci0qwQ07MEKU3brwWDQbEIbqtMevTlIhC7GnT1MnwE3McMllSp5mEVGwLg==
+  dependencies:
+    react-resp-rr "^1.0.2"
+
+react-resp-rr@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-resp-rr/-/react-resp-rr-1.0.5.tgz#da0b559fda4eef539c38a5e348f732e96be519e5"
+  integrity sha512-VjTz91sNMrdFjPc25Njv2EzLg69mn/DOeN3aRnsiaPG/vx1BD6H4Qv0+qMI7wPjp/T1JhFXItpFDKq6rsMRqtw==
+  dependencies:
+    react-resp-rr "^1.0.3"
+
+react-resp-rr@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-resp-rr/-/react-resp-rr-1.0.6.tgz#6d76bf1b6f06a94a7f642935fc5772d006ca9b7e"
+  integrity sha512-sX0SeepVx48QsfMppRlC44N3hRLYv2XeoApBBLwa9A8nxDUAn9K8qyEdPbGHAu81i+b2WMP4skV3F0RhyxyTag==
+  dependencies:
+    react-resp-rr "^1.0.5"
+
+react-resp-rr@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-resp-rr/-/react-resp-rr-1.0.7.tgz#9a0a3db6da22724544a83f2db0f846fb39b9871f"
+  integrity sha512-O+zlcjFabEU03i9Zrthwf/N+SMIs+O7EJJeY9m4UUIB0UXerE5yduRhGVbLMS6QGBiB+pfO/Bhez3TRLamepRQ==
+  dependencies:
+    react-resp-rr "^1.0.6"
+
 react@^18.1.1:
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/react/-/react-18.3.1.tgz#49ab892009c53933625bd16b2533fc754cab2891"
