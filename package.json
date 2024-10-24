@@ -33,8 +33,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fuadlabibalh/react-respo.git"
-  },
-  "dependencies": {
-    "react-resp-rr": "^1.0.7"
   }
 }
