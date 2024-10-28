@@ -52,3 +52,5 @@ export declare enum OSDevice {
 export declare const getOsDevice: () => OSDevice;
 export declare const getOrientation: () => ScreenOrientation;
 export declare const getScreenRasio: () => number;
+export declare function useDeviceScreen(): DeviceScreens;
+export declare const useDimension: () => ScreenDimension;

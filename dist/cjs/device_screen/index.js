@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getScreenRasio = exports.getOrientation = exports.getOsDevice = exports.OSDevice = exports.getScreenDimension = exports.getScreenTypes = exports.getRootFontSize = exports.ScreenOrientation = exports.ScreenType = exports.getDPSize = exports.getPortSize = void 0;
+exports.useDimension = exports.getScreenRasio = exports.getOrientation = exports.getOsDevice = exports.OSDevice = exports.getScreenDimension = exports.getScreenTypes = exports.getRootFontSize = exports.ScreenOrientation = exports.ScreenType = exports.getDPSize = exports.getPortSize = void 0;
+exports.useDeviceScreen = useDeviceScreen;
+const react_1 = require("react");
 const getPortSize = () => {
     let result;
     const root = (0, exports.getRootFontSize)();
@@ -158,3 +160,31 @@ const getScreenRasio = () => {
     return screen.height / screen.width;
 };
 exports.getScreenRasio = getScreenRasio;
+function useDeviceScreen() {
+    const dimension = (0, exports.useDimension)();
+    let result = {
+        dimension: dimension,
+        orientation: (0, exports.getOrientation)(),
+        rasio: (0, exports.getScreenRasio)(),
+        os: (0, exports.getOsDevice)(),
+        type: (0, exports.getScreenTypes)(),
+        rootFontSize: (0, exports.getRootFontSize)(),
+        fontSize: (0, exports.getPortSize)(),
+        dpFontSize: (0, exports.getDPSize)()
+    };
+    return result;
+}
+const useDimension = () => {
+    const [screen, setScreen] = (0, react_1.useState)((0, exports.getScreenDimension)());
+    const handleResize = () => {
+        return setScreen((0, exports.getScreenDimension)());
+    };
+    (0, react_1.useEffect)(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [screen]);
+    return screen;
+};
+exports.useDimension = useDimension;
