@@ -5,7 +5,7 @@ import { useDeviceScreen } from "../device_screen";
  * css will be generate and replace with condition you can be device like conditional in react with state etc.
  * @param styleDef @callback @type {func (device: DeviceScreens): React.CSSProperties}
  * @param setConds @callback @type {setCondision}
- * @returns
+ * @returns {React.CSSProperties}
  */
 function gerResp(styleDef, ...setConds) {
     const device = useDeviceScreen();
@@ -18,4 +18,14 @@ function gerResp(styleDef, ...setConds) {
     }
     return result;
 }
+/**
+ * get function to generate CSS @function gerResp
+ * param length is not identification
+ * use can passing callback more.
+ * css will be generate and replace with condition you can be device like conditional in react with state etc.
+ * @param styleDef @callback @type {func (device: DeviceScreens): React.CSSProperties}
+ * @param setConds @callback @type {setCondision}
+ * @returns {React.CSSProperties}
+ * @returns @function gerResp
+ */
 export const useResponsive = () => gerResp;

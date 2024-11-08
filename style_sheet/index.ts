@@ -22,10 +22,10 @@ export interface setCondision { (device: DeviceScreens): CondsCss }
  * css will be generate and replace with condition you can be device like conditional in react with state etc.
  * @param styleDef @callback @type {func (device: DeviceScreens): React.CSSProperties}
  * @param setConds @callback @type {setCondision}
- * @returns 
+ * @returns {React.CSSProperties}
  */
 
-function gerResp(styleDef: (device: DeviceScreens)=> React.CSSProperties, ...setConds: setCondision[]) {
+function gerResp(styleDef: (device: DeviceScreens)=> React.CSSProperties, ...setConds: setCondision[]): React.CSSProperties {
   const device = useDeviceScreen()
   let result: React.CSSProperties = {...styleDef(device), transition: "all 150ms easy-in-out"}
   for(let i: number = 0; i < setConds.length; i++){
@@ -35,6 +35,15 @@ function gerResp(styleDef: (device: DeviceScreens)=> React.CSSProperties, ...set
   }
   return result;
 }
-
+/**
+ * get function to generate CSS @function gerResp
+ * param length is not identification
+ * use can passing callback more.
+ * css will be generate and replace with condition you can be device like conditional in react with state etc.
+ * @param styleDef @callback @type {func (device: DeviceScreens): React.CSSProperties}
+ * @param setConds @callback @type {setCondision}
+ * @returns {React.CSSProperties}
+ * @returns @function gerResp
+ */
 export const useResponsive = () => gerResp
 

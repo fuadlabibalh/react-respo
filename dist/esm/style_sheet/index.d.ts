@@ -20,8 +20,18 @@ export interface setCondision {
  * css will be generate and replace with condition you can be device like conditional in react with state etc.
  * @param styleDef @callback @type {func (device: DeviceScreens): React.CSSProperties}
  * @param setConds @callback @type {setCondision}
- * @returns
+ * @returns {React.CSSProperties}
  */
 declare function gerResp(styleDef: (device: DeviceScreens) => React.CSSProperties, ...setConds: setCondision[]): React.CSSProperties;
+/**
+ * get function to generate CSS @function gerResp
+ * param length is not identification
+ * use can passing callback more.
+ * css will be generate and replace with condition you can be device like conditional in react with state etc.
+ * @param styleDef @callback @type {func (device: DeviceScreens): React.CSSProperties}
+ * @param setConds @callback @type {setCondision}
+ * @returns {React.CSSProperties}
+ * @returns @function gerResp
+ */
 export declare const useResponsive: () => typeof gerResp;
 export {};
