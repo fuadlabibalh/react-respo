@@ -5,17 +5,17 @@ export const {
   getPortSize,
   getDPSize,
   getRootFontSize,
-  getScreenDimension,
-  getOsDevice,
+  getRootDpFontSize,
+  getScreenTypes,
+  getInnerDimension,
+  useAvlDimension,
+  useCurrentDimension,
+  getOs,
   getOrientation,
-  getScreenRasio,
   useDeviceScreen,
 } = device_screen;
 
 export const {
-  useCssGenerator,
-  concateWithOrientation,
-  switcherValue,
   useResponsive,
 } = style_sheet;
 
