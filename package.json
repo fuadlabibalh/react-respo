@@ -1,9 +1,18 @@
 {
-  "name": "react-resp-rr",
+  "name": "react-easy-responsive",
   "version": "2.1.9",
-  "description": "react responsive",
+  "description": "A powerful yet simple React library designed to make responsive can adapt seamlessly to any device, providing a smooth, consistent user experience.",
   "author": "fuadlabibalh",
   "license": "MIT",
+  "keywords": [
+    "react-responsive",
+    "react-component",
+    "responsive-design",
+    "css-generator",
+    "react",
+    "responsive",
+    "latest"
+  ],
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/cjs/index.d.ts",

@@ -1,8 +1,15 @@
-# React responsive for css inline code make simple ;
+# react-easy-responsive
 
-- for react create css or generating css and use responsive to trrigger condition you can to use like conditional state or event you can be call etc.
-- can be combine with framework or library UI Component.
-- simple code style inline
+- A powerful yet simple React library designed to make responsive, inline styling easy and intuitive. react-easy-responsive allows you to conditionally apply styles based on device properties like screen size, orientation, OS, and more, directly within your React components. Ideal for developers who want to create clean, responsive designs without external CSS or complex media queries.
+
+- With react-easy-responsive, your React components can adapt seamlessly to any device, providing a smooth, consistent user experience.
+
+## Key Features
+- Responsive Inline Styling: Easily define CSS inline based on changing device properties.
+- Hooks-Driven: Leverage React hooks to detect screen size, orientation, OS, etc., for dynamic styling.
+- Simple Conditional Styling: Apply styles based on conditions, like device type or orientation, without needing complex breakpoints.
+- Device-Specific Adaptation: Supports flexible font sizes, device dimensions, and layout shifts based on the detected device.
+- Easy Integration: Works smoothly with existing React UI frameworks or component libraries.
 
 ## Device Screen
 
@@ -10,11 +17,11 @@
 
 #### install with npm
 
-`npm i react-resp-rr`
+`npm i react-easy-responsive`
 
 #### install with yarn
 
-`yarn add react-resp-rr`
+`yarn add react-easy-responsive`
 
 ```js
 const device: DeviceScreens = useDeviceScreen();
@@ -44,33 +51,36 @@ deviceType: DeviceType;
 - this use hooks for trigger condition regenerate css with default and conditional rendering with state etc.
 - making simple conditional rendering react code with callback and device & screen identification detect size, os, dimension, orientation, and use fontsize to define root fontsize in css root
 
-### Example
+### Quick Example
 
-- use hooks like
+- Make responsive design easy and efficient with react-easy-responsive—the ideal tool for building dynamic, device-adaptive React applications!
 
 ```js
+import { useDeviceScreen, useResponsive } from 'react-easy-responsive';
 
-const { os } = useDeviceScreen();
+const App = () => {
+  const device = useDeviceScreen();
+  const cssrr = useResponsive();
 
-const cssrr = useResponsive();
+  return (
+    <div
+      style={cssrr(
+        ({ fontSize }) => ({
+          fontSize: fontSize.md,
+          display: "flex",
+          flexDirection: "column",
+        }),
+        ({ os }) => ({
+          condition: os === "ANDROID",
+          style: { flexDirection: "row" },
+        })
+      )}
+    >
+      {device.os}
+    </div>
+  );
+};
 
-<div
-  style={cssrr(
-    ({ fontSize }) => ({
-      fontSize: fontSize.md,
-      display: "flex",
-      flexDirection: "column",
-    }),
-    ({ os }) => ({
-      condition: os === Os.ANDROID,
-      style: {
-        flexDirection: "row",
-      },
-    })
-  )}
->
-  {os}
-</div>;
 ```
 
 ##### - creating Component with animation
