@@ -13,17 +13,17 @@ function gerResp(styleDef, ...setConds) {
         setEvent({ ...event, hover: false });
     };
     const handleMouseClick = () => {
-        setEvent({ ...event, click: false });
+        setEvent({ ...event, click: true });
         setTimeout(() => setEvent({ ...event, click: false }), 300);
     };
     useEffect(() => {
-        window.addEventListener('mouseenter', handleMouseEnter);
-        window.addEventListener('mouseleave', handleMouseLeave);
-        window.addEventListener('click', handleMouseClick);
+        document.addEventListener('mouseenter', handleMouseEnter);
+        document.addEventListener('mouseleave', handleMouseLeave);
+        document.addEventListener('click', handleMouseClick);
         return () => {
-            window.removeEventListener('mouseenter', handleMouseEnter);
-            window.removeEventListener('mouseleave', handleMouseLeave);
-            window.removeEventListener('click', handleMouseClick);
+            document.removeEventListener('mouseenter', handleMouseEnter);
+            document.removeEventListener('mouseleave', handleMouseLeave);
+            document.removeEventListener('click', handleMouseClick);
         };
     }, []);
     let result = { ...styleDef({ ...device, event }), transition: "all 300ms easy-in-out" };
