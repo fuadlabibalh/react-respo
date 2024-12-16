@@ -1,4 +1,4 @@
-# react-easy-responsive
+# react-easy-responsive new version off react-resp-rr
 
 - A powerful yet simple React library designed to make responsive, inline styling easy and intuitive. react-easy-responsive allows you to conditionally apply styles based on device properties like screen size, orientation, OS, and more, directly within your React components. Ideal for developers who want to create clean, responsive designs without external CSS or complex media queries.
 
