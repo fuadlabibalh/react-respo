@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { DeviceScreens } from "../device_screen"
 import { useDeviceScreen } from "../device_screen";
 
@@ -25,13 +25,50 @@ export interface setCondision { (device: DeviceScreens): CondsCss }
  * @returns {React.CSSProperties}
  */
 
-function gerResp(styleDef: (device: DeviceScreens)=> React.CSSProperties, ...setConds: setCondision[]): React.CSSProperties {
-  const device = useDeviceScreen()
-  let result: React.CSSProperties = {...styleDef(device), transition: "all 150ms easy-in-out"}
-  for(let i: number = 0; i < setConds.length; i++){
+export interface CssEvent {
+  hover: boolean,
+  click: boolean
+}
+export interface CssElementContext extends DeviceScreens {
+  event: CssEvent
+}
+
+function gerResp(styleDef: (device: CssElementContext) => React.CSSProperties, ...setConds: setCondision[]): React.CSSProperties {
+  const [event, setEvent] = useState<CssEvent>({
+    hover: false,
+    click: false
+  })
+
+  const device = useDeviceScreen();
+
+  const handleMouseEnter = () => {
+    setEvent({ ...event, hover: true })
+  }
+  const handleMouseLeave = () => {
+    setEvent({ ...event, hover: false })
+  }
+  const handleMouseClick = () => {
+    setEvent({ ...event, click: false })
+    setTimeout(() => setEvent({ ...event, click: false }), 300)
+  }
+
+  useEffect(() => {
+    window.addEventListener('mouseenter', handleMouseEnter);
+    window.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('click', handleMouseClick)
+
+    return () => {
+      window.removeEventListener('mouseenter', handleMouseEnter);
+      window.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('click', handleMouseClick)
+
+    }
+  }, [])
+  let result: React.CSSProperties = { ...styleDef({ ...device, event }), transition: "all 150ms easy-in-out" }
+  for (let i: number = 0; i < setConds.length; i++) {
     let func = setConds[i]
     let temp = func(device)
-    if(temp.condition) result = {...result, ...temp.style, transition: "all 150ms easy-out-in"}
+    if (temp.condition) result = { ...result, ...temp.style, transition: "all 150ms easy-out-in" }
   }
   return result;
 }
