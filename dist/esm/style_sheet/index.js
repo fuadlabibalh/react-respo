@@ -6,10 +6,12 @@ function gerResp(styleDef, ...setConds) {
         click: false
     });
     const device = useDeviceScreen();
-    const handleMouseEnter = () => {
+    const handleMouseEnter = (ev) => {
+        console.log(ev);
         setEvent({ ...event, hover: true });
     };
-    const handleMouseLeave = () => {
+    const handleMouseLeave = (ev) => {
+        console.log(ev);
         setEvent({ ...event, hover: false });
     };
     const handleMouseClick = () => {

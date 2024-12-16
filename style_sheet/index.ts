@@ -41,10 +41,12 @@ function gerResp(styleDef: (context: CssElementContext) => React.CSSProperties, 
 
   const device = useDeviceScreen();
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (ev:any) => {
+    console.log(ev)
     setEvent({ ...event, hover: true })
   }
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (ev: any) => {
+    console.log(ev)
     setEvent({ ...event, hover: false })
   }
   const handleMouseClick = () => {
