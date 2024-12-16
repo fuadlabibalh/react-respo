@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { useResponsive } from '.';
+import { useResponsive } from './index';
 ReactDOM.createRoot(document.getElementById('root')).render(<React.StrictMode>
         <Apps />
     </React.StrictMode>);
 function Apps() {
     const cssrr = useResponsive();
-    return (<div style={cssrr(() => ({ fontSize: "1.6rem", padding: "1rem" }), ({ event }) => ({ condition: event.hover === true, style: { color: "red" } }))}>
+    return (<div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100vw", height: "100vh" }}>
+            <button style={cssrr(() => ({ fontSize: "1.6rem", padding: "1rem", background: "black", display: "flex" }))}>
             test
+        </button>
         </div>);
 }
