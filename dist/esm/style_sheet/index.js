@@ -26,12 +26,12 @@ function gerResp(styleDef, ...setConds) {
             window.removeEventListener('click', handleMouseClick);
         };
     }, []);
-    let result = { ...styleDef({ ...device, event }), transition: "all 150ms easy-in-out" };
+    let result = { ...styleDef({ ...device, event }), transition: "all 300ms easy-in-out" };
     for (let i = 0; i < setConds.length; i++) {
         let func = setConds[i];
-        let temp = func(device);
+        let temp = func({ ...device, event });
         if (temp.condition)
-            result = { ...result, ...temp.style, transition: "all 150ms easy-out-in" };
+            result = { ...result, ...temp.style, transition: "all 300ms easy-out-in" };
     }
     return result;
 }

@@ -12,7 +12,7 @@ export interface CondsCss {
  * @typedef {setCondision}
  */
 export interface setCondision {
-    (device: DeviceScreens): CondsCss;
+    (device: CssElementContext): CondsCss;
 }
 /**
  * param length is not identification
